@@ -61,7 +61,7 @@ def fetch_emoticons():
         )
 
 
-def send(channel, message):
+def send(channel, message, color="#a256ed"):
     response = requests.post(
         "https://slack.com/api/chat.postMessage",
         json={
@@ -69,7 +69,7 @@ def send(channel, message):
             "attachments": [
                 {
                     "text": message,
-                    "color": "#a256ed",
+                    "color": color,
                 }
             ]
         },
